@@ -28,4 +28,4 @@ Estructura inicial de la fase 1. Las funciones se implementarán en ramas separa
 
 ## Autor
 
-TU NOMBRE
+Sandoval Vinces WLadimir Gadiel
