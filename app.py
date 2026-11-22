@@ -1,6 +1,6 @@
 
 # Gestor de Tareas CLI
-# Fase 2 - Operaciones Basicas
+# Fase 3 - Integracion de funcionalidades
 
 tareas = []
 
@@ -34,6 +34,49 @@ def listar_tareas():
         print(f"{i}. {tarea['titulo']} - {estado}")
 
 
+def completar_tarea():
+    print("\n===== COMPLETAR TAREA =====")
+
+    if not tareas:
+        print("No hay tareas registradas.")
+        return
+
+    listar_tareas()
+
+    try:
+        numero = int(input("Numero de tarea a completar: "))
+
+        if 1 <= numero <= len(tareas):
+            tareas[numero - 1]["completada"] = True
+            print("Tarea completada correctamente.")
+        else:
+            print("Numero de tarea no valido.")
+
+    except ValueError:
+        print("Debe ingresar un numero valido.")
+
+
+def eliminar_tarea():
+    print("\n===== ELIMINAR TAREA =====")
+
+    if not tareas:
+        print("No hay tareas registradas.")
+        return
+
+    listar_tareas()
+
+    try:
+        numero = int(input("Numero de tarea a eliminar: "))
+
+        if 1 <= numero <= len(tareas):
+            tarea = tareas.pop(numero - 1)
+            print(f"Tarea '{tarea['titulo']}' eliminada.")
+        else:
+            print("Numero de tarea no valido.")
+
+    except ValueError:
+        print("Debe ingresar un numero valido.")
+
 
 def mostrar_menu():
     print("\n===== SISTEMA DE GESTION DE TAREAS =====")
@@ -43,7 +86,6 @@ def mostrar_menu():
     print("3. Marcar tarea como completada")
     print("4. Eliminar tarea registrada")
     print("5. Salir del sistema")
-
 
 
 def main():
@@ -59,10 +101,10 @@ def main():
             listar_tareas()
 
         elif opcion == "3":
-            print("Funcion en desarrollo.")
+            completar_tarea()
 
         elif opcion == "4":
-            print("Funcion en desarrollo.")
+            eliminar_tarea()
 
         elif opcion == "5":
             print("Saliendo del programa...")
