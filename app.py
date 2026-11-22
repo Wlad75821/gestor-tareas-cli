@@ -34,13 +34,16 @@ def listar_tareas():
         print(f"{i}. {tarea['titulo']} - {estado}")
 
 
+
 def mostrar_menu():
-    print("\n===== GESTOR DE TAREAS =====")
-    print("1. Agregar tarea")
-    print("2. Listar tareas")
-    print("3. Completar tarea")
-    print("4. Eliminar tarea")
-    print("5. Salir")
+    print("\n===== SISTEMA DE GESTION DE TAREAS =====")
+    print("Seleccione una opcion del menu:")
+    print("1. Agregar nueva tarea")
+    print("2. Consultar lista de tareas")
+    print("3. Marcar tarea como completada")
+    print("4. Eliminar tarea registrada")
+    print("5. Salir del sistema")
+
 
 
 def main():
